@@ -13,7 +13,7 @@ class LoginPage(BasePage):
         self.register_new_user(email, password)
 
     def should_be_login_url(self):
-        assert self.browser*LoginPageLocators.CURRENT_URL is "http://selenium1py.pythonanywhere.com/ru/accounts/login/"\
+        assert self.browser*LoginPageLocators.CURRENT_URL == "http://selenium1py.pythonanywhere.com/ru/accounts/login/"\
             , "Wrong login url"
 
     def should_be_login_form(self):

@@ -6,6 +6,9 @@ import pytest
 import time
 
 
+link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
+
+
 class TestUserAddToBasketFromProductPage:
     @pytest.fixture(scope="function", autouse=True)
     def setup(self, browser):
@@ -19,7 +22,6 @@ class TestUserAddToBasketFromProductPage:
         page.should_be_authorized_user()
 
     def test_user_cant_see_success_message(self, browser):
-        link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
         page = MainPage(browser, link)
         page.open()
         product_page = ProductPage(browser, browser.current_url)
@@ -27,7 +29,6 @@ class TestUserAddToBasketFromProductPage:
 
     @pytest.mark.need_review
     def test_user_can_add_product_to_basket(self, browser):
-        link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
         page = MainPage(browser, link)
         page.open()
         product_page = ProductPage(browser, browser.current_url)
@@ -58,7 +59,6 @@ def test_guest_can_go_to_login_page(browser, link):
 
 @pytest.mark.need_review
 def test_guest_can_add_product_to_basket(browser):
-    link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
     page = MainPage(browser, link)
     page.open()
     product_page = ProductPage(browser, browser.current_url)
@@ -67,7 +67,6 @@ def test_guest_can_add_product_to_basket(browser):
 
 
 def test_guest_cant_see_success_message(browser):
-    link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
     page = MainPage(browser, link)
     page.open()
     product_page = ProductPage(browser, browser.current_url)
@@ -76,7 +75,6 @@ def test_guest_cant_see_success_message(browser):
 
 @pytest.mark.xfail
 def test_message_disappeared_after_adding_product_to_basket(browser):
-    link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
     page = MainPage(browser, link)
     page.open()
     product_page = ProductPage(browser, browser.current_url)
