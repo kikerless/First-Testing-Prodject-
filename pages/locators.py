@@ -4,6 +4,11 @@ from selenium.webdriver.common.by import By
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
+    USER_REGISTRATION_INPUT_EMAIL = (By.NAME, "registration-email")
+    USER_REGISTRATION_INPUT_PASS = (By.NAME, "registration-password1")
+    USER_REGISTRATION_INPUT_PASS_REPEAT = (By.NAME, "registration-password2")
+    USER_REGISTRATION_SUBMIT_BUTTON = (By.NAME, "registration_submit")
 
 
 class MainPageLocators:
